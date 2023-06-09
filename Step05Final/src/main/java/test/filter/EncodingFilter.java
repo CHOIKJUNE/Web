@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebFilter;
 /*
  *  요청을 중간에 가로채서 encoding설정을 해주는 Filter만들기
  */
-@WebFilter(urlPatterns = {"/private/*", "/file/private/*"}) // "/*"는 이 프로젝트에 오는 모든 요청에 대해 필터링을 하겠다는 의미
+@WebFilter("/*") // "/*"는 이 프로젝트에 오는 모든 요청에 대해 필터링을 하겠다는 의미
 public class EncodingFilter implements Filter{
 
 	@Override

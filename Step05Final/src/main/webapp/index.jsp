@@ -12,13 +12,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
 <title>index.jsp</title>
 </head>
 <body>
 <div class="container">
 	<%if(id!=null) {%>
 	<p>
-		<strong><%=id%></strong>님 로그인중...
+		<a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id%></a>님 로그인중...
 		<a href="${pageContext.request.contextPath}/users/logout.jsp">로그아웃</a>
 	</p>
 	<%}%>
@@ -29,6 +30,8 @@
 		<li><a href="${pageContext.request.contextPath}/private/game.jsp">놀러가기(로그인필요)</a></li>
 		<li><a href="${pageContext.request.contextPath}/private/study.jsp">공부하기(로그인필요)</a></li>
 		<li><a href="file/list.jsp">자료실</a></li>
+		<li><a href="test/signup_form.jsp">form테스트</a></li>
+		<li><a href="cafe/list.jsp">글 목록보기</a>
 	</ul>
 </div>
 </body>

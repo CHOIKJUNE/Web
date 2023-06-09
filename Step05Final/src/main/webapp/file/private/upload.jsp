@@ -53,6 +53,7 @@ MultipartRequest mr = new MultipartRequest(request, //내부적으로 필요한 
 <body>
 	<%if(isSuccess) {%>
 	<p>업로드되었습니다.</p>
+	<p>주소: <%=realPath%></p>
 	<a href="${pageContext.request.contextPath}/file/list.jsp">돌아가기</a>
 	<%}%>
 </body>

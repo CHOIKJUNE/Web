@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/private/*")
+@WebFilter(urlPatterns = {"/private/*", "/file/private/*", "/users/private/*", "/cafe/private/*"})
 public class loginFilter implements Filter{
 
    private String encodeUrl;
@@ -63,7 +63,7 @@ public class loginFilter implements Filter{
          String cPath=req.getContextPath();
          // ServletResponse type 을 HttpServletResponse type 으로 casting
          HttpServletResponse res=(HttpServletResponse)response;
-		res.sendRedirect(cPath+"/users/loginform.jsp?url=" + encodeUrl);
+		res.sendRedirect(cPath+"/users/loginform.jsp?url=" + encodedUrl);
       }
    }
 
