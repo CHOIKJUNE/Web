@@ -5,13 +5,13 @@
 <%
 	//1. num과 id를 이용해 회원정보를 수정한다.
 	int num = Integer.valueOf(request.getParameter("num"));
-	String id = (String)session.getAttribute("id");
+	String writer = (String)session.getAttribute("id");
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
 	
 	CafeDto dto = new CafeDto();
 	dto.setNum(num);
-	dto.setWriter(id);
+	dto.setWriter(writer);
 	dto.setTitle(title);
 	dto.setContent(content);
 	boolean isSuccess  = CafeDao.getInstance().upDate(dto);
@@ -29,7 +29,7 @@
 		location.href="${pageContext.request.contextPath}/cafe/list.jsp";
 		<%}else{%>
 		alert("글이 수정되지 않았습니다.");
-		location.href="${pageContext.request.contextPath}/cafe/private/updateform.jsp";
+		location.href="${pageContext.request.contextPath}/cafe/private/updateform?num=<%=dto.getNum()%>.jsp";
 		<%}%>
 	</script>
 </body>
